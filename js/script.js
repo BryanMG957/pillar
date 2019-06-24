@@ -124,13 +124,14 @@ function setCurrentForecast(data){
 function createTemperatureChart(degree){
   var ctx = document.getElementById('temperatureForecastChart').getContext('2d');
   var chart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: chartLabels,
+        fill: false,
         datasets: [{
             label: 'Temperature',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 255, 255)',
+            //backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(119, 136, 153)',
             data: degree
         }]
     },
@@ -145,7 +146,7 @@ function createHumidityChart(){
         labels: chartLabels,
         datasets: [{
             label: 'Humidity',
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(135, 206, 250)',
             borderColor: 'rgb(255, 255, 255)',
             data: forecastHumidity
         }]
@@ -161,7 +162,7 @@ function createPressureChart(){
         labels: chartLabels,
         datasets: [{
             label: 'Pressure',
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(250, 160, 122)',
             borderColor: 'rgb(255, 255, 255)',
             data: forecastPressure
         }]
