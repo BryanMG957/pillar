@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/screen.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="heading">
+      <h1 class="text-center">Pillar Weather</h1>
+    </div>
+    <div class="row">
+      <h6 class="text-center">Search by city name, latitude and longitude or zip code</h6>
+      <div class="col-md-12 col-md-push-3">
+        <form name="myForm" id="location" onsubmit="getWeather(); return false">
+          <input type="text" name="city" value="" placeholder="Enter City Name">
+          <input type="text" name="latitude" value="" placeholder="Enter Latitude">
+          <input type="text" name="longitude" value="" placeholder="Enter Longitude">
+          <input type="text" name="zipCode" value="" placeholder="Enter Zip Code">
+          <input type="submit" value="Submit" class="btn">
+        </form>
+      </div>
+    </div><!--row-->
+    <div class="row">
+      <div class="col-md-6 col-xs-8 col-xs-push-2 col-md-push-3">
+        <div class="weather text-center">
+          <div class="toggle" id="f">
+            <button type="button" class="btn btn-info btn-xs">&#8451;</button>
+          </div>
+          <h1 class="temp"></h1>
+          <h4 class="humidity"></h4>
+          <h5 class="pressure"></h5>
+          <h3>in <span class="city"></span>, <span class="country"></span></h3>
+          <div class="iconpic">
+            <img src="" class='img img-responsive center-block'>
+          </div>
+          <h4 class="weatherDetail"></h4><br/>
+        </div><!--weather-->
+      </div>
+    </div><!--row-->
+    <canvas id="temperatureForecastChart"></canvas>
+    <canvas id="humidityForecastChart"></canvas>
+    <canvas id="pressureForecastChart"></canvas>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+</html>
